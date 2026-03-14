@@ -1,0 +1,530 @@
+[
+  {
+    "name": "New balance 530 silver navy",
+    "tag": "Studio Run",
+    "description": "Mesh upper • Matte sole",
+    "price": "MMK 85,000",
+    "image": "/images/new-balance-530.jpg",
+    "sizes": [
+      "36",
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "tone": "light",
+    "category": "unisex"
+  },
+  {
+    "name": "New balance 530 silver black & white",
+    "tag": "Studio Run",
+    "description": "Mesh upper • Matte sole",
+    "price": "MMK 85,000",
+    "image": "/images/new-balance-530-b&W.jpg",
+    "sizes": [
+      "36",
+      "37",
+      "38",
+      "39",
+      "40",
+      "44",
+      "45"
+    ],
+    "tone": "light",
+    "category": "unisex"
+  },
+  {
+    "name": "New balance 530 pink",
+    "tag": "Studio Air",
+    "description": "Knit upper • Air sole",
+    "price": "MMK 85,000",
+    "image": "/images/new-balance-530-pink.jpg",
+    "sizes": [
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"  ],
+    "tone": "light",
+    "category": " unisex"   
+  },
+  {
+    "name": "New balance 530 brown",
+    "tag": "Studio Air",
+    "description": "Knit upper • Air sole",
+    "price": "MMK 85,000",
+    "image": "/images/new-balance-530-brown.jpg",
+    "sizes": [
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"   ],
+    "tone": "light",
+    "category": "unisex"  
+  },
+  {
+    "name": "New balance 530 white",
+    "tag": "Studio Air",
+    "description": "Knit upper • Air sole",
+    "price": "MMK 85,000",
+    "image": "/images/new-balance-530-white.jpg",
+    "sizes": [
+      
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "tone": "light",
+    "category": "unisex"
+  },{
+     "name": "New balance 530 brown01",
+    "tag": "Studio Air",
+    "description": "Knit upper • Air sole",
+    "price": "MMK 105,000",
+    "image": "/images/new-balance-530-brown01.jpg",
+    "sizes": [
+      
+      "36",
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "tone": "light",
+    "category": "unisex"
+  },
+  {
+    "name": "MLB",
+    "tag": "Studio Air",
+    "description": "Knit upper • Air sole",
+    "price": "MMK 108,000",
+    "image": "/images/mlb-01.jpg",
+    "sizes": [
+      
+      "36",
+      "37",
+      "38",
+      "39",
+      "40",
+      "44"
+    ],
+    "tone": "light",
+    "category": "unisex"
+  },
+  {
+    "name": "Samba white",
+    "tag": "Studio Air",
+    "description": "Knit upper • Air sole",
+    "price": "MMK 87,000",
+    "image": "/images/samba-white.jpg",
+    "sizes": [
+      
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "tone": "light",
+    "category": "unisex"
+  },
+  {
+    "name": "Samba black",
+    "tag": "Studio Air",
+    "description": "Knit upper • Air sole",
+    "price": "MMK 87,000",
+    "image": "/images/samba-black.jpg",
+    "sizes": [
+      
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "tone": "light",
+     "category": "men"    
+  },
+  {
+    "name": "Samba pink",
+    "tag": "Studio Air",
+    "description": "Knit upper • Air sole",
+    "price": "MMK 87,000",
+    "image": "/images/samba-pink.jpg",
+    "sizes": [
+      
+      "36",
+      "38" 
+    ],
+    "tone": "light",
+     "category": "women"    
+  },
+  {
+    "name": "Samba brown",
+    "tag": "Studio Air",
+    "description": "Knit upper • Air sole",
+    "price": "MMK 87,000",
+    "image": "/images/samba-brown.jpg",
+    "sizes": [
+      
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "tone": "light",
+     "category": "unisex"    
+  },
+  {
+    "name": "Samba blue",
+    "tag": "Studio Air",
+    "description": "Knit upper • Air sole",
+    "price": "MMK 87,000",
+    "image": "/images/samba-blue.jpg",
+    "sizes": [
+      
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+     ],
+    "tone": "light",
+     "category": "unisex"    
+  },
+  {
+    "name": "Puma Rose White",
+    "tag": "Studio Air",
+    "description": "Knit upper • Air sole",
+    "price": "MMK 115,000",
+    "image": "/images/puma-rose-white.jpg",
+    "sizes": [
+      
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+     ],
+    "tone": "light",
+     "category": "unisex"    
+  },
+  {
+    "name": "Puma Speedcat Blackpink",
+    "tag": "Studio Air",
+    "description": "Premium Quality ",
+    "price": "MMK 115,000",
+    "image": "/images/pumaspeedcat.jpg",
+    "sizes": [
+      
+      "36",
+      "37",
+      "38",
+      "40"
+     ],
+    "tone": "light",
+     "category": "unisex"
+  },
+  {
+    "name": "Puma Speedcat White",
+    "tag": "Studio Air",
+    "description": "Premium Quality ",
+    "price": "MMK 115,000",
+    "image": "/images/pumaspeedcat-white.jpg",
+    "sizes": [
+      
+      "36",
+      "37",
+      "39",
+      "40"
+     ],
+    "tone": "light",
+     "category": "unisex"
+
+  },
+  {
+    "name": "Puma Speedcat Brown",
+    "tag": "Studio Air",
+    "description": "Premium Quality ",
+    "price": "MMK 115,000",
+    "image": "/images/pumaspeedcat-brown.jpg",
+    "sizes": [
+      
+      "37",
+      "43"
+     ],
+    "tone": "light",
+     "category": "unisex"
+    },
+    {
+    "name": "Puma Speedcat Red",
+    "tag": "Studio Air",
+    "description": "Premium Quality ",
+    "price": "MMK 115,000",
+    "image": "/images/pumaspeedcat-red.jpg",
+    "sizes": [  
+      "41"
+    ],
+    "tone": "light",
+     "category": "unisex"
+    },
+    {
+      "name": "Puma Speedcat Pink",
+      "tag": "Studio Air",
+      "description": "Premium Quality ",    
+      "price": "MMK 115,000",
+      "image": "/images/pumaspeedcat-pink.jpg",
+      "sizes": [
+        "36",
+        "37",
+        "38",
+        "39",
+        "40"
+      ],
+      "tone": "light",
+       "category": "unisex"
+    },
+    {
+      "name": "Puma Speedcat Red",
+      "tag": "Studio Air",
+      "description": "High Quality ",    
+      "price": "MMK 88,000",
+      "image": "/images/pumaspeedcat-red01.jpg",
+      "sizes": [
+        "36",
+        "37",
+        "38",
+        "39",
+        "40"
+      ],
+      "tone": "light",
+       "category": "unisex"
+    },
+    {
+     "name": "Puma Speedcat BlackPink", 
+      "tag": "Studio Air",  
+      "description": "High Quality ",   
+      "price": "MMK 88,000",
+      "image": "/images/pumaspeedcat-blackpink.jpg",
+      "sizes": [
+        "36",
+        "37",
+        "38", 
+        "39",
+        "40"
+      ],
+      "tone": "light",
+       "category": "unisex"
+    },
+    {
+     "name": "New Balance 740", 
+      "tag": "Studio Air",  
+      "description": "normal quality ",   
+      "price": "MMK 105,000",
+      "image": "/images/new-balance-740.jpg",
+      "sizes": [
+        "36",
+        "37",
+        "38", 
+        "39",
+        "40"
+      ],
+      "tone": "light",
+       "category": "unisex" 
+    },
+    {
+      "name": "Onitsuka Tiger Yellow",
+      "tag": "",
+      "description": "normal quality ",
+      "price": "MMK 121,000",
+      "image": "/images/onitsuka-tiger-yellow.jpg",
+      "sizes": [
+        "36",
+        "37"
+      ],
+      "tone": "light",
+       "category": "unisex"
+    } ,
+    {
+      "name": "New balance 530 Green",
+      "tag": "",
+      "description": "high quality ",
+      "price": "MMK 65,000",
+      "image": "/images/new-balance-530-green.jpg",
+      "sizes": [
+        "43"
+      ],
+      "tone": "light",
+       "category": "unisex"
+      },
+      {
+        "name": "New balance 1960r Black",
+        "tag": "",
+        "description": "high quality ",
+        "price": "MMK 78,000",
+        "image": "/images/new-balance-1960r-black.jpg",
+        "sizes": [
+          "43"
+        ],
+        "tone": "light",
+         "category": "unisex"
+      },
+      {
+        "name": "New balance 9060",
+        "tag": "",
+        "description": "high quality ",
+        "price": "MMK 77,000",
+        "image": "/images/new-balance-9060.jpg",
+        "sizes": [
+          "37",
+          "38"
+        ],
+        "tone": "light",
+         "category": "unisex"
+        },
+        {
+          "name": "Samba Flower",
+          "tag": "",
+          "description": "high quality ",
+          "price": "MMK 77,000",
+          "image": "/images/samba-flower.jpg",
+          "sizes": [
+            "40"
+            ],
+          "tone": "light",
+           "category": "unisex"
+        },
+        {
+          "name": "Bape sta White Green",
+          "tag": "",
+          "description": "high quality ",
+          "price": "MMK 50,000",
+          "image": "/images/bape-sta-white-green.jpg",
+          "sizes": [
+            "40",
+            "41",
+            "42",
+            "43", 
+            "44"
+            ],
+          "tone": "light",
+           "category": "unisex"
+        },
+        {
+          "name": "Bape sta White orange",
+          "tag": "",
+          "description": "high quality ",
+          "price": "MMK 50,000",
+          "image": "/images/bape-sta-white-orange.jpg",
+          "sizes": [
+            "40",
+            "41",
+            "42",
+            "43", 
+            "44"
+            ],
+          "tone": "light",
+           "category": "unisex"
+        },
+        {
+          "name": "New Balance 550",
+          "tag": "",
+          "description": "high quality ",
+          "price": "MMK 63,000",
+          "image": "/images/new-balance-550.jpg",
+          "sizes": [
+             
+            "43"
+            ],
+          "tone": "light",
+           "category": "unisex"
+        },
+        {
+          "name": "Air jordan 4 black",
+          "tag": "",
+          "description": "high quality ",
+          "price": "MMK 69,000",
+          "image": "/images/air-jordan4-black.jpg",
+          "sizes": [
+            "40",
+            "41",
+            "42"],
+          "tone": "light",
+           "category": "men"
+        },
+        {
+          "name": "Air jordan 4 blue",
+          "tag": "",
+          "description": "high quality ",
+          "price": "MMK 69,000",
+          "image": "/images/air-jordan4-blue.jpg",
+          "sizes": [
+            
+            "41"
+            ],
+          "tone": "light",
+            "category": "unisex"
+        },
+        {
+          "name": "dior & Air jordan 1",
+          "tag": "",
+          "description": "high quality ",
+          "price": "MMK 65,000",
+          "image": "/images/dior&airjordan-1.jpg",
+          "sizes": [
+            
+            "42",
+            "43"
+            ],
+          "tone": "light",
+           "category": "unisex"
+        },
+        {
+          "name": "Dr. Martens Khaki ",
+          "tag": "",
+          "description": "high quality ",
+          "price": "MMK 165,000",
+          "image": "/images/dr-martens-khaki.jpg",
+          "sizes": [
+            
+            "43",
+            "45"
+            ],
+          "tone": "light",
+           "category": "unisex"
+        },
+        {
+          "name": "Yeezy slide",
+          "tag": "",
+          "description": "high quality ",
+          "price": "MMK 48,000",
+          "image": "/images/yeezy-slide.jpg",
+          "sizes": [
+            
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",       
+            "43",
+            "44"
+            ],
+          "tone": "light",
+           "category": "unisex"
+        }
+]
