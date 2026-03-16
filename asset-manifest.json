@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/sneakerstudio-react/static/css/main.b75312da.css",
+    "main.js": "/sneakerstudio-react/static/js/main.ad4ade0d.js",
+    "index.html": "/sneakerstudio-react/index.html",
+    "main.b75312da.css.map": "/sneakerstudio-react/static/css/main.b75312da.css.map",
+    "main.ad4ade0d.js.map": "/sneakerstudio-react/static/js/main.ad4ade0d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b75312da.css",
+    "static/js/main.ad4ade0d.js"
+  ]
+}
