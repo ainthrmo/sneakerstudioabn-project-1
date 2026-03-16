@@ -1,4 +1,5 @@
 import { useMemo, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 
 export default function ProductCard({ product }) {
@@ -82,6 +83,9 @@ export default function ProductCard({ product }) {
         ) : (
           <span>{product.tag}</span>
         )}
+        <Link className="product-quick" to="/product">
+          Quick View
+        </Link>
       </div>
       <div className="product-info">
         <h3>{product.name}</h3>
@@ -111,8 +115,8 @@ export default function ProductCard({ product }) {
           </div>
         </div>
         <div className="product-meta">
-          <p className="price">{product.price}</p>
-          <button className="btn small" type="button" onClick={handleAdd}>
+          <p className="product-price">{product.price}</p>
+          <button className="btn small add-btn" type="button" onClick={handleAdd}>
             Add to cart
           </button>
         </div>

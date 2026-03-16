@@ -133,7 +133,7 @@ export default function Product() {
                   const lineTotal = parsePrice(item.price) * (item.quantity || 1);
                   return (
                     <li key={`${item.name}-${item.size}-${index}`}>
-                      <div>
+                      <div className="order-item">
                         {item.image && (
                           <img
                             className="order-thumb"
@@ -142,16 +142,30 @@ export default function Product() {
                             loading="lazy"
                           />
                         )}
-                        <p className="order-name">
-                          {item.name} ({item.size}) x{item.quantity}
-                        </p>
-                        <p className="order-price">{formatMMK(lineTotal)}</p>
+                        <div className="order-details">
+                          <p className="order-name">
+                            {item.name}
+                            <span className="order-meta">
+                              {item.size} • Qty {item.quantity}
+                            </span>
+                          </p>
+                          <p className="order-price">{formatMMK(lineTotal)}</p>
+                        </div>
                         <button
                           className="order-remove"
                           type="button"
                           onClick={() => removeItem(item.name, item.size)}
+                          aria-label={`Remove ${item.name}`}
                         >
-                          Remove
+                          <span className="trash-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" role="img" focusable="false">
+                              <path
+                                d="M9 3h6l1 2h4v2H4V5h4l1-2Zm1 6h2v9h-2V9Zm4 0h2v9h-2V9ZM7 9h2v9H7V9Z"
+                                fill="currentColor"
+                              />
+                            </svg>
+                          </span>
+                          <span className="sr-only">Remove</span>
                         </button>
                       </div>
                     </li>
@@ -171,6 +185,14 @@ export default function Product() {
                 type="button"
                 onClick={() => handleSend("telegram")}
               >
+                <span className="support-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" role="img" focusable="false">
+                    <path
+                      d="M20.4 4.8 3.9 11.2c-1.1.4-1.1 1 .2 1.4l4.1 1.3 1.6 4.7c.2.6.4.7.8.3l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l2.9-13.4c.3-1.2-.4-1.7-1.4-1.3ZM8.9 13.6l8.2-5.1c.4-.2.8 0 .5.3l-6.6 6-.2 2.3-1-3.2-2.9-.9Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </span>
                 Chat on Telegram
               </button>
               <button
@@ -178,13 +200,20 @@ export default function Product() {
                 type="button"
                 onClick={() => handleSend("viber")}
               >
+                <span className="support-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" role="img" focusable="false">
+                    <path
+                      d="M20.5 14.4c-.7-1.6-2.5-2.1-3.3-1.2l-.7.8c-.3.3-.7.4-1.1.2-1.3-.6-2.7-2-3.3-3.3-.2-.4-.1-.8.2-1.1l.8-.7c.9-.8.4-2.6-1.2-3.3l-1-.4c-.9-.4-1.9-.1-2.4.8-.9 1.7-1 3.9-.1 6.1 1.2 3 4 5.8 7 7 2.2.9 4.4.8 6.1-.1.9-.5 1.2-1.5.8-2.4l-.4-1Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </span>
                 Chat on Viber
               </button>
             </div>
             {status.type !== "idle" && (
               <p className={`form-status ${status.type}`}>{status.message}</p>
             )}
-            <span className="support-note">{CONTACT_PHONE}</span>
           </div>
         </div>
       </section>
