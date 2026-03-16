@@ -16,6 +16,9 @@ const formatMMK = (amount) => {
 export default function Product() {
   const { items, count, removeItem } = useCart();
   const [status, setStatus] = useState({ type: "idle", message: "" });
+  const [activePlatform, setActivePlatform] = useState(null);
+  const platformLabel =
+    activePlatform === "viber" ? "Viber" : activePlatform === "telegram" ? "Telegram" : "";
 
   const cartTotal = useMemo(
     () =>
@@ -72,6 +75,11 @@ export default function Product() {
     return success;
   };
 
+  const getTargetUrl = (platform) =>
+    platform === "viber"
+      ? `viber://chat?number=${encodeURIComponent(CONTACT_PHONE)}`
+      : "https://t.me/+959670000834";
+
   const handleSend = async (platform) => {
     if (!items.length) {
       setStatus({ type: "error", message: "Your cart is empty." });
@@ -96,15 +104,10 @@ export default function Product() {
       return;
     }
 
-    const targetUrl =
-      platform === "viber"
-        ? `viber://chat?number=${encodeURIComponent(CONTACT_PHONE)}`
-        : "https://t.me/+959670000834";
-
-    window.open(targetUrl, "_blank", "noopener,noreferrer");
+    setActivePlatform(platform);
     setStatus({
       type: "success",
-      message: `Order copied. Opened ${platform === "viber" ? "Viber" : "Telegram"}.`,
+      message: "Order copied. Ready to send.",
     });
   };
 
@@ -217,6 +220,52 @@ export default function Product() {
           </div>
         </div>
       </section>
+      {activePlatform && (
+        <div
+          className="modal-backdrop"
+          role="presentation"
+          onClick={() => setActivePlatform(null)}
+        >
+          <div
+            className="modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="order-modal-title"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <p id="order-modal-title" className="modal-title">
+              Order Copied!
+            </p>
+            <p className="modal-sub">
+              *sneaker studio တို့၏ {activePlatform} သို့ အလိုအလျောက် ရောက်ရှိသွားပါမည်။
+              ကျေးဇူးပြု၍ မှာယူထားသောပစ္စည်းများ ကို Paste လုပ်ပြီး ပို့ပေးပါရှင့်။
+            </p>
+            <div className="modal-actions">
+                <button
+                  className="modal-primary"
+                  type="button"
+                  onClick={() => {
+                    window.open(
+                      getTargetUrl(activePlatform),
+                      "_blank",
+                      "noopener,noreferrer"
+                    );
+                    setActivePlatform(null);
+                  }}
+                >
+                Go to {platformLabel}
+                </button>
+              <button
+                className="modal-secondary"
+                type="button"
+                onClick={() => setActivePlatform(null)}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
     </main>
   );

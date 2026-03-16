@@ -965,6 +965,63 @@ h2 {
   display: block;
 }
 
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  z-index: 2000;
+}
+
+.modal-card {
+  width: min(520px, 92vw);
+  background: #fff;
+  border-radius: 20px;
+  padding: 1.8rem;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+  display: grid;
+  gap: 1rem;
+  text-align: left;
+}
+
+.modal-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.modal-sub {
+  color: var(--gray-700);
+  line-height: 1.6;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.modal-primary {
+  border: none;
+  background: var(--black);
+  color: var(--white);
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.modal-secondary {
+  border: 1px solid var(--gray-200);
+  background: #fff;
+  color: var(--black);
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 .support-note {
   font-size: 0.75rem;
   color: var(--gray-700);
