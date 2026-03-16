@@ -1,21 +1,7 @@
-﻿import { useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 import { useCart } from "../context/CartContext";
-import products from "../data/products.json";
 
 const CONTACT_PHONE = "+959670000834";
-
-const FALLBACK_PRODUCT = {
-  name: "",
-  price: "MMK 0",
-  description: "",
-  sizes: ["One Size"],
-  image: "",
-  highlights: [
-    "Full-grain leather upper",
-    "Memory foam insole",
-    "Anti-slip rubber outsole",
-  ],
-};
 
 const parsePrice = (value) => {
   if (!value) return 0;
@@ -28,224 +14,208 @@ const formatMMK = (amount) => {
 };
 
 export default function Product() {
-  const { addItem } = useCart();
-  const hasProduct = products.length > 0;
-  const featured = hasProduct ? products[0] : FALLBACK_PRODUCT;
-  const [activeImage, setActiveImage] = useState(0);
-  const [size, setSize] = useState(featured.sizes?.[0] || "One Size");
-  const [quantity, setQuantity] = useState(1);
-  const imageRef = useRef(null);
+  const { items, count, removeItem } = useCart();
+  const [status, setStatus] = useState({ type: "idle", message: "" });
 
-  const gallery = featured.gallery?.length
-    ? featured.gallery
-    : [featured.image].filter(Boolean);
-
-  const totalAmount = useMemo(
-    () => parsePrice(featured.price) * quantity,
-    [featured.price, quantity]
+  const cartTotal = useMemo(
+    () =>
+      items.reduce(
+        (sum, item) => sum + parsePrice(item.price) * (item.quantity || 1),
+        0
+      ),
+    [items]
   );
 
-  const handleStep = (delta) => {
-    setQuantity((prev) => {
-      const next = prev + delta;
-      if (next < 1) return 1;
-      if (next > 10) return 10;
-      return next;
-    });
+  const buildMessage = () => {
+    if (!items.length) return "";
+    const origin = window.location.origin;
+
+    return [
+      "New SneakerStudio Order",
+      `To: ${CONTACT_PHONE}`,
+      "",
+      "Items:",
+      ...items.map((item, index) => {
+        const lineTotal = parsePrice(item.price) * (item.quantity || 1);
+        const imageUrl = item.image
+          ? item.image.startsWith("http")
+            ? item.image
+            : `${origin}${item.image}`
+          : "-";
+        return `${index + 1}. ${item.name} (${item.size}) x${item.quantity} — ${formatMMK(
+          lineTotal
+        )}\nImage: ${imageUrl}`;
+      }),
+      "",
+      `Total items: ${count}`,
+      `Total amount: ${formatMMK(cartTotal)}`,
+      "",
+      "Is this product still available?",
+    ].join("\n");
   };
 
-  const flyToCart = () => {
-    const img = imageRef.current;
-    const cart = document.querySelector(".floating-cart");
-    if (!img || !cart) return;
+  const copyToClipboard = async (text) => {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
 
-    const imgRect = img.getBoundingClientRect();
-    const cartRect = cart.getBoundingClientRect();
-    const clone = img.cloneNode(true);
-
-    clone.classList.add("fly-image");
-    clone.style.width = `${imgRect.width}px`;
-    clone.style.height = `${imgRect.height}px`;
-    clone.style.left = `${imgRect.left}px`;
-    clone.style.top = `${imgRect.top}px`;
-
-    document.body.appendChild(clone);
-
-    const translateX =
-      cartRect.left + cartRect.width / 2 - (imgRect.left + imgRect.width / 2);
-    const translateY =
-      cartRect.top + cartRect.height / 2 - (imgRect.top + imgRect.height / 2);
-
-    requestAnimationFrame(() => {
-      clone.style.transform = `translate(${translateX}px, ${translateY}px) scale(0.2)`;
-      clone.style.opacity = "0";
-    });
-
-    clone.addEventListener(
-      "transitionend",
-      () => {
-        clone.remove();
-      },
-      { once: true }
-    );
+    const temp = document.createElement("textarea");
+    temp.value = text;
+    temp.setAttribute("readonly", "");
+    temp.style.position = "absolute";
+    temp.style.left = "-9999px";
+    document.body.appendChild(temp);
+    temp.select();
+    const success = document.execCommand("copy");
+    document.body.removeChild(temp);
+    return success;
   };
 
-  const handleAdd = () => {
-    if (!hasProduct) return;
-    addItem({
-      name: featured.name,
-      price: featured.price,
-      size,
-      quantity,
-    });
-    flyToCart();
-    setQuantity(1);
+  const handleCopy = async () => {
+    if (!items.length) {
+      setStatus({ type: "error", message: "Your cart is empty." });
+      return;
+    }
+
+    const message = buildMessage();
+    try {
+      const copied = await copyToClipboard(message);
+      if (!copied) {
+        setStatus({
+          type: "error",
+          message: "Could not copy. Please copy the message manually.",
+        });
+        return;
+      }
+    } catch (error) {
+      setStatus({
+        type: "error",
+        message: "Could not copy. Please copy the message manually.",
+      });
+      return;
+    }
+
+    setStatus({ type: "success", message: "Order copied. Paste into chat." });
   };
 
-  if (!hasProduct) {
-    return (
-      <main id="main" className="product-page">
-        <section className="section">
-          <div className="container">
-            <h1>No product found</h1>
-            <p className="lead">Add products in products.json to display here.</p>
-          </div>
-        </section>
-      </main>
-    );
-  }
+  const handleSend = async (platform) => {
+    if (!items.length) {
+      setStatus({ type: "error", message: "Your cart is empty." });
+      return;
+    }
+
+    const message = buildMessage();
+    try {
+      const copied = await copyToClipboard(message);
+      if (!copied) {
+        setStatus({
+          type: "error",
+          message: "Could not copy. Please copy the message manually.",
+        });
+        return;
+      }
+    } catch (error) {
+      setStatus({
+        type: "error",
+        message: "Could not copy. Please copy the message manually.",
+      });
+      return;
+    }
+
+    const targetUrl =
+      platform === "viber"
+        ? `viber://chat?number=${encodeURIComponent(CONTACT_PHONE)}`
+        : "https://t.me/+959670000834";
+
+    window.open(targetUrl, "_blank", "noopener,noreferrer");
+    setStatus({
+      type: "success",
+      message: `Order copied. Opened ${platform === "viber" ? "Viber" : "Telegram"}.`,
+    });
+  };
 
   return (
     <main id="main" className="product-page">
-      <section className="product-hero container">
-        <div className="product-gallery">
-          <div className="gallery-main">
-            <span className="badge">Low Stock</span>
-            <img
-              ref={imageRef}
-              src={gallery[activeImage]}
-              alt={featured.name}
-            />
-          </div>
-          {gallery.length > 1 && (
-            <div className="gallery-thumbs">
-              {gallery.map((src, index) => (
-                <button
-                  key={src}
-                  type="button"
-                  className={`thumb${activeImage === index ? " active" : ""}`}
-                  onClick={() => setActiveImage(index)}
-                >
-                  <img src={src} alt={`${featured.name} view ${index + 1}`} />
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-
-        <div className="product-info-panel">
-          <p className="eyebrow">Premium Drop</p>
-          <h1>{featured.name}</h1>
-          <p className="product-sub">{featured.description}</p>
-          <div className="price-row">
-            <span className="price-tag">{featured.price}</span>
-            <span className="total-tag">Total {formatMMK(totalAmount)}</span>
-          </div>
-
-          <div className="trust-row">
-            <div className="trust-item">
-              <span className="trust-icon">✓</span>
-              <span>100% Authentic</span>
-            </div>
-            <div className="trust-item">
-              <span className="trust-icon">⚡</span>
-              <span>2-Day Delivery</span>
-            </div>
-          </div>
-
-          <div className="size-tiles">
-            <p className="label">Select Size</p>
-            <div className="tiles">
-              {(featured.sizes || ["One Size"]).map((option) => (
-                <button
-                  key={option}
-                  type="button"
-                  className={`size-tile${size === option ? " selected" : ""}`}
-                  onClick={() => setSize(option)}
-                >
-                  {option}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="qty-row">
-            <p className="label">Quantity</p>
-            <div className="stepper">
-              <button type="button" onClick={() => handleStep(-1)}>
-                -
-              </button>
-              <span>{quantity}</span>
-              <button type="button" onClick={() => handleStep(1)}>
-                +
-              </button>
-            </div>
-          </div>
-
-          <button className="btn cta" type="button" onClick={handleAdd}>
-            Add to Cart
-          </button>
-
-          <div className="highlights">
-            <p className="label">Highlights</p>
-            <div className="highlight-list">
-              {(featured.highlights || FALLBACK_PRODUCT.highlights).map((item) => (
-                <span key={item}>{item}</span>
-              ))}
-            </div>
-          </div>
+      <section className="page-hero">
+        <div className="container">
+          <p className="eyebrow">Your Cart</p>
+          <h1>Review your items.</h1>
+          <p className="lead">Only products you add will appear here.</p>
         </div>
       </section>
 
       <section className="section">
-        <div className="container split">
-          <div>
-            <h2>Built for Myanmar streets</h2>
-            <p className="lead">
-              Breathable lining, soft cushioning, and neutral tones made for daily
-              wear across Yangon and beyond.
-            </p>
-          </div>
-          <div className="tile">
-            <p className="tile-title">Care Guide</p>
-            <p className="tile-sub">Wipe clean with dry cloth</p>
-            <div className="divider"></div>
-            <p className="tile-copy">Store in a cool, dry place away from sun.</p>
+        <div className="container">
+          <div className="order-panel">
+            <div className="order-header">
+              <h2>Selected items</h2>
+              <span className="order-count">{count} items</span>
+            </div>
+            {items.length === 0 ? (
+              <p className="muted">Your cart is empty. Add items to see them here.</p>
+            ) : (
+              <ul className="order-list">
+                {items.map((item, index) => {
+                  const lineTotal = parsePrice(item.price) * (item.quantity || 1);
+                  return (
+                    <li key={`${item.name}-${item.size}-${index}`}>
+                      <div>
+                        {item.image && (
+                          <img
+                            className="order-thumb"
+                            src={item.image}
+                            alt={item.name}
+                            loading="lazy"
+                          />
+                        )}
+                        <p className="order-name">
+                          {item.name} ({item.size}) x{item.quantity}
+                        </p>
+                        <p className="order-price">{formatMMK(lineTotal)}</p>
+                        <button
+                          className="order-remove"
+                          type="button"
+                          onClick={() => removeItem(item.name, item.size)}
+                        >
+                          Remove
+                        </button>
+                      </div>
+                    </li>
+                  );
+                })}
+                <li>
+                  <div>
+                    <p className="order-name">Total</p>
+                    <p className="order-price">{formatMMK(cartTotal)}</p>
+                  </div>
+                </li>
+              </ul>
+            )}
+            <div className="support-actions">
+              <button
+                className="support-btn telegram"
+                type="button"
+                onClick={() => handleSend("telegram")}
+              >
+                Chat on Telegram
+              </button>
+              <button
+                className="support-btn viber"
+                type="button"
+                onClick={() => handleSend("viber")}
+              >
+                Chat on Viber
+              </button>
+            </div>
+            {status.type !== "idle" && (
+              <p className={`form-status ${status.type}`}>{status.message}</p>
+            )}
+            <span className="support-note">{CONTACT_PHONE}</span>
           </div>
         </div>
       </section>
 
-      <aside className="support-card" aria-label="Order support">
-        <p>Need help? Chat with us</p>
-        <div className="support-actions">
-          <a
-            className="support-btn telegram"
-            href={"https://t.me/+959670000834"}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Telegram
-          </a>
-          <a
-            className="support-btn viber"
-            href={`viber://chat?number=${encodeURIComponent(CONTACT_PHONE)}`}
-          >
-            Viber
-          </a>
-        </div>
-        <span className="support-note">{CONTACT_PHONE}</span>
-      </aside>
     </main>
   );
 }
-

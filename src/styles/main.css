@@ -636,6 +636,7 @@ h2 {
   font-size: 1rem;
   letter-spacing: 1px;
   background: #000;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
 }
 
 .highlights {
@@ -681,6 +682,7 @@ h2 {
   font-weight: 600;
   color: #fff;
   text-align: center;
+  border: 1px solid transparent;
 }
 
 .support-btn.telegram {
@@ -821,6 +823,15 @@ h2 {
   align-items: center;
 }
 
+.order-thumb {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid var(--gray-200);
+  flex-shrink: 0;
+}
+
 .order-name {
   font-weight: 600;
 }
@@ -828,6 +839,21 @@ h2 {
 .order-price {
   color: var(--gray-700);
   font-size: 0.85rem;
+}
+
+.order-remove {
+  border: 1px solid var(--gray-200);
+  background: #fff;
+  color: var(--gray-700);
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.order-remove:hover {
+  border-color: var(--black);
+  color: var(--black);
 }
 
 .site-footer {
@@ -1041,9 +1067,19 @@ h2 {
   }
 
   .support-card {
-    right: 1rem;
-    left: 1rem;
-    bottom: 5.5rem;
+    position: static;
+    margin: 1rem 0 0;
+    border-radius: 16px;
+    box-shadow: none;
+  }
+
+  .support-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .btn.cta {
+    width: 100%;
+    text-align: center;
   }
 }
 

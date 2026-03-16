@@ -44,19 +44,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="hero-card">
-            <div className="hero-shoe">
-              <div className="shoe-line"></div>
-              <p>Studio 01</p>
-              <span>Monochrome Runner</span>
-            </div>
-            <div className="hero-info">
-              <p className="price">MMK 335,000</p>
-              <button className="btn small" type="button">
-                Add to cart
-              </button>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -90,51 +77,6 @@ export default function Home() {
         })}
       </section>
 
-      <section className="section alt">
-        <div className="container split">
-          <div>
-            <h2>Designed to move</h2>
-            <p>
-              The SneakerStudio curation focuses on comfort-first construction and
-              balanced proportions. No loud branding, no excess. Just the sneaker.
-            </p>
-            <ul className="list">
-              <li>Premium knit uppers and soft leather mixes</li>
-              <li>Neutral palettes that match every wardrobe</li>
-              <li>Limited drops announced weekly</li>
-            </ul>
-          </div>
-          <div className="tile">
-            <p className="tile-title">Weekly Drop</p>
-            <p className="tile-sub">Friday 9:00 AM</p>
-            <div className="divider"></div>
-            <p className="tile-copy">Stay ready for minimal releases in limited stock.</p>
-            <Link className="btn ghost" to="/product">
-              Get notified
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container">
-          <div className="newsletter">
-            <div>
-              <h2>Join the studio list</h2>
-              <p>Early access to drops, restock alerts, and minimalist style edits.</p>
-            </div>
-            <form className="newsletter-form">
-              <label className="sr-only" htmlFor="email">
-                Email
-              </label>
-              <input id="email" type="email" placeholder="your@email.com" />
-              <button className="btn" type="button">
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

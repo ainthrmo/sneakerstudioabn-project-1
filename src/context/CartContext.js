@@ -28,6 +28,12 @@ export function CartProvider({ children }) {
     setItems([]);
   };
 
+  const removeItem = (name, size) => {
+    setItems((prev) =>
+      prev.filter((item) => !(item.name === name && item.size === size))
+    );
+  };
+
   const count = useMemo(
     () => items.reduce((sum, item) => sum + (item.quantity || 1), 0),
     [items]
@@ -39,6 +45,7 @@ export function CartProvider({ children }) {
       count,
       addItem,
       clearCart,
+      removeItem,
     }),
     [items, count]
   );

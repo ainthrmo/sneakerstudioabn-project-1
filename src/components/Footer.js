@@ -12,7 +12,7 @@ export default function Footer() {
           <p className="footer-title">Shop</p>
           <Link to="/men">Men</Link>
           <Link to="/women">Women</Link>
-          <Link to="/brands">Brands</Link>
+          <Link to="/accessories">Accessories</Link>
           <Link to="/product">Product</Link>
         </div>
         <div>

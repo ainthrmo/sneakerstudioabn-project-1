@@ -44,10 +44,17 @@ export default function Contact() {
   );
 
   const orderLines = items.map((item, index) => {
+    const origin = window.location.origin;
     const lineTotal = parsePrice(item.price) * (item.quantity || 1);
+    const imageUrl = item.image
+      ? item.image.startsWith("http")
+        ? item.image
+        : `${origin}${item.image}`
+      : "-";
+    const imageLine = `Image: ${imageUrl}`;
     return `${index + 1}. ${item.name} (${item.size}) x${item.quantity} — ${formatMMK(
       lineTotal
-    )}`;
+    )}\n${imageLine}`;
   });
 
   const receiptText = useMemo(() => {
@@ -66,10 +73,17 @@ export default function Contact() {
       "",
       "Items",
       ...items.map((item, index) => {
+        const origin = window.location.origin;
         const lineTotal = parsePrice(item.price) * (item.quantity || 1);
+        const imageUrl = item.image
+          ? item.image.startsWith("http")
+            ? item.image
+            : `${origin}${item.image}`
+          : "-";
+        const imageLine = `Image: ${imageUrl}`;
         return `  ${index + 1}. ${item.name} (${item.size}) x${item.quantity} — ${formatMMK(
           lineTotal
-        )}`;
+        )}\n    ${imageLine}`;
       }),
       "",
       `Total items: ${totalItems}`,
@@ -95,10 +109,17 @@ export default function Contact() {
       "",
       "Items:",
       ...items.map((item, index) => {
+        const origin = window.location.origin;
         const lineTotal = parsePrice(item.price) * (item.quantity || 1);
+        const imageUrl = item.image
+          ? item.image.startsWith("http")
+            ? item.image
+            : `${origin}${item.image}`
+          : "-";
+        const imageLine = `Image: ${imageUrl}`;
         return `${index + 1}. ${item.name} (${item.size}) x${item.quantity} — ${formatMMK(
           lineTotal
-        )}`;
+        )}\n${imageLine}`;
       }),
       "",
       `Total items: ${totalItems}`,

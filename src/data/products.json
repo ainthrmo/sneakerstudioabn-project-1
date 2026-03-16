@@ -524,7 +524,276 @@
             "43",
             "44"
             ],
-          "tone": "light",
-           "category": "unisex"
-        }
+    "tone": "light",
+   "category": "unisex"
+    }
+    ,
+    {
+      "name": "Adidas slide black",
+      "tag": "",
+      "description": "high quality ",
+      "price": "MMK 58,000",
+      "image": "/images/adidas-slide-black.jpg",
+      "sizes": [
+        
+        "40",
+        "41",
+        "42",       
+        "43",
+        "44"
+        ],
+    "tone": "black",
+   "category": "men"
+    },
+    {
+      "name": "Adidas slide",
+      "tag": "",
+      "description": "high quality ",
+      "price": "MMK 58,000",
+      "image": "/images/adidas-slide.jpg",
+      "sizes": [      
+        "40",
+        "41",
+        "42",       
+        "43",
+        "44"
+        ],  
+    "tone": "white",
+   "category": "men"
+    },
+    {
+      "name": "Adidas slide white",
+      "tag": "",
+      "description": "high quality ",
+      "price": "MMK 58,000",
+      "image": "/images/adidas-slide-white.jpg",
+      "sizes": [      
+        "40",
+        "41",
+        "42",       
+        "43",
+        "44"
+        ],  
+    "tone": "white",
+   "category": "men"
+    },
+    {
+      "name": "Adidas slide avocado",
+      "tag": "",
+      "description": "high quality ",
+      "price": "MMK 58,000",
+      "image": "/images/adidas-slide-avocado.jpg",
+      "sizes": [      
+        "40",
+        "41",
+        "42",       
+        "43",
+        "44"
+        ],  
+    "tone": "avocado",
+   "category": "men"
+    },
+    {
+      "name": "Classic Crocs Bone color",
+      "tag": "",
+      "description": "high quality ",
+      "price": "MMK 68,000",
+      "image": "/images/cros-bone.jpg",
+      "sizes": [ 
+        "39",     
+        "40",
+        "41",
+        "42",       
+        "43",
+        "44"
+        ],
+    "tone": "bone",
+   "category": "unisex"
+    },
+    {
+      "name": "Classic Crocs White",
+      "tag": "",
+      "description": "high quality ",
+      "price": "MMK 68,000",
+      "image": "/images/crocs-white.jpg",
+      "sizes": [ 
+        "38-39",     
+        "39-40",
+        "42-43",
+        "43-44"
+        ],
+    "tone": "white",
+   "category": "unisex"
+    },
+    {
+      "name": "Women's Boots ",
+      "tag": "",
+      "description": "high quality ",
+      "price": "MMK 68,000",
+      "image": "/images/boots.jpg",
+      "sizes": [ 
+         "36",
+         "37",
+         "38",
+         "39",
+         "40"
+        ],
+    "tone": "black",
+   "category": "women"
+    },
+    {
+      "name": "Nike Slide Black",
+      "tag": "",
+      "description": "high quality ",
+      "price": "MMK 65,000",
+      "image": "/images/nike-slide-black.jpg",
+      "sizes": [
+        
+        "44"
+      ],
+      "tone": "black",
+      "category": "men"
+    },
+    {
+      "name": "Blue Sashiko",
+      "tag": "",
+      "description": "high quality ",
+      "price": "MMK 75,000",
+      "image": "/images/blue-sashiko.jpg",
+      "sizes": [
+        
+        "39"
+      ],
+      "tone": "blue",    
+      "category": "men"
+    },
+    {
+      "name": "Crocs White",
+      "tag": "",
+      "description": "high quality ",
+      "price": "MMK 39,000",
+      "image": "/images/crocs-slipper.jpg",
+      "sizes": [
+        "38",
+        "39",
+        "40",
+        "41",
+        "42"
+      ],
+      "tone": "red",  
+      "category": "unisex"
+    },
+    {
+      "name": "Crocs Black",
+      "tag": "",
+      "description": "high quality ",
+      "price": "MMK 39,000",
+      "image": "/images/crocs-slipper-black.jpg",
+      "sizes": [
+        
+        "40" 
+      ],
+      "tone": "black",  
+      "category": "unisex"
+    },
+    {
+      "name": "Nike Air Jordan 1 Low White",
+      "tag": "",
+      "description": "high quality ",
+      "price": "MMK 67,000",
+      "image": "/images/nike-air-jordan-low-white.jpg",
+      "sizes": [
+        
+        "42",
+        "44" 
+      ],
+      "tone": "white",  
+      "category": "unisex"
+    },
+    {
+      "name": "Nike Air Jordan 1 Low pink",
+      "tag": "",
+      "description": "high quality ",
+      "price": "MMK 67,000",
+      "image": "/images/nike-air-jordan-low-pink.jpg",
+      "sizes": [
+        "36",
+        "37",
+        "38",
+        "39",
+        "40"
+      ],
+      "tone": "black",  
+      "category": "women"
+    },
+    {
+      "name": "Nike Dunk Low Year of the Rabbit",
+      "tag": "",
+      "description": "high quality ",
+      "price": "MMK 53,000",
+      "image": "/images/nike-dunk-low.jpg",
+      "sizes": [
+         "36"
+      ],
+      "tone": "brown",
+      "category": "women"
+
+    },
+    {
+      "name": "Nike Dunk Low Year of the Rabbit",
+      "tag": "",
+      "description": "high quality ",
+      "price": "MMK 53,000",
+      "image": "/images/nike-dunk-low-02.jpg",
+      "sizes": [
+         "37",
+          "38", 
+          "39",
+          "40" 
+       ],
+      "tone": "white and orange",
+      "category": "women"
+    },
+    {
+      "name": "EPOWER PRESENTS HATS",
+      "tag": "HATS",
+      "description": "Ribbed cotton blend - mid-calf",
+      "price": "MMK 29,000",
+      "image": "/images/epower-present-hats.jpg",
+      "sizes": [
+        "brown",
+        "black",
+        "khaki",
+        "blue"
+      ],
+      "tone": " ",
+      "category": "accessories"
+    },
+    {
+      "name": "Always Hats",
+      "tag": "Accessories",
+      "description": " ",
+      "price": "MMK 32,000",
+      "image": "/images/always-hats.jpg",
+      "sizes": [
+        "black",
+        "red",
+        "brown"
+      ],
+      "tone": " ",
+      "category": "accessories"
+    },
+    {
+      "name": "Delightsome Hats",
+      "tag": "Accessories",
+      "description": " ",
+      "price": "MMK 29,000",
+      "image": "/images/delightsome-hat.jpg",
+      "sizes": [
+        "black",
+        "brown"
+      ],
+      "tone": " ",
+      "category": "accessories"
+    }
 ]

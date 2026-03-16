@@ -1,4 +1,5 @@
-﻿import { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 
 const CONTACT_PHONE = "+959670000834";
@@ -17,6 +18,8 @@ const formatMMK = (amount) => {
 
 export default function FloatingCart() {
   const { items, count, clearCart } = useCart();
+  const navigate = useNavigate();
+  const location = useLocation();
   const [open, setOpen] = useState(false);
 
   const totalItems = useMemo(
@@ -35,6 +38,7 @@ export default function FloatingCart() {
 
   const buildMessage = () => {
     if (!items.length) return "";
+    const origin = window.location.origin;
 
     return [
       "New SneakerStudio Order",
@@ -43,9 +47,15 @@ export default function FloatingCart() {
       "Items:",
       ...items.map((item, index) => {
         const lineTotal = parsePrice(item.price) * (item.quantity || 1);
+        const imageUrl = item.image
+          ? item.image.startsWith("http")
+            ? item.image
+            : `${origin}${item.image}`
+          : "-";
+        const imageLine = `Image: ${imageUrl}`;
         return `${index + 1}. ${item.name} (${item.size}) x${item.quantity} — ${formatMMK(
           lineTotal
-        )}`;
+        )}\n${imageLine}`;
       }),
       "",
       `Total items: ${totalItems}`,
@@ -72,13 +82,21 @@ export default function FloatingCart() {
     setOpen(false);
   };
 
+  const handleCartClick = () => {
+    if (location.pathname !== "/product") {
+      navigate("/product");
+      return;
+    }
+    setOpen((prev) => !prev);
+  };
+
   return (
     <div className={`floating-cart-wrap${open ? " open" : ""}`}>
       <button
         className="floating-cart"
         type="button"
         aria-label="Open order options"
-        onClick={() => setOpen((prev) => !prev)}
+        onClick={handleCartClick}
       >
         <span className="cart-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
@@ -110,4 +128,3 @@ export default function FloatingCart() {
     </div>
   );
 }
-

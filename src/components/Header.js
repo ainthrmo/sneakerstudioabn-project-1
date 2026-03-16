@@ -38,8 +38,8 @@ export default function Header() {
           <NavLink className={navLinkClass} to="/women" onClick={handleClose}>
             Women
           </NavLink>
-          <NavLink className={navLinkClass} to="/brands" onClick={handleClose}>
-            Brands
+          <NavLink className={navLinkClass} to="/accessories" onClick={handleClose}>
+            Accessories
           </NavLink>
           <NavLink className={navLinkClass} to="/product" onClick={handleClose}>
             Product
