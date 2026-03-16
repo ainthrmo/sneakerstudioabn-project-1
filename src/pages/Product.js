@@ -42,7 +42,7 @@ export default function Product() {
             ? item.image
             : `${origin}${item.image}`
           : "-";
-        return `${index + 1}. ${item.name} (${item.size}) x${item.quantity} — ${formatMMK(
+        return `${index + 1}. ${item.name} (${item.size}) x${item.quantity} - ${formatMMK(
           lineTotal
         )}\nImage: ${imageUrl}`;
       }),
@@ -70,33 +70,6 @@ export default function Product() {
     const success = document.execCommand("copy");
     document.body.removeChild(temp);
     return success;
-  };
-
-  const handleCopy = async () => {
-    if (!items.length) {
-      setStatus({ type: "error", message: "Your cart is empty." });
-      return;
-    }
-
-    const message = buildMessage();
-    try {
-      const copied = await copyToClipboard(message);
-      if (!copied) {
-        setStatus({
-          type: "error",
-          message: "Could not copy. Please copy the message manually.",
-        });
-        return;
-      }
-    } catch (error) {
-      setStatus({
-        type: "error",
-        message: "Could not copy. Please copy the message manually.",
-      });
-      return;
-    }
-
-    setStatus({ type: "success", message: "Order copied. Paste into chat." });
   };
 
   const handleSend = async (platform) => {
