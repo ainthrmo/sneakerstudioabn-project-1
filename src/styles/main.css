@@ -889,6 +889,10 @@ h2 {
   color: var(--gray-700);
 }
 
+.scroll-hint {
+  display: none;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -1052,10 +1056,18 @@ h2 {
     overflow-x: auto;
     padding-bottom: 0.5rem;
     scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
   }
 
   .grid-3 .product {
     scroll-snap-align: start;
+  }
+
+  .scroll-hint {
+    display: block;
+    margin: 0.6rem 0 1.2rem;
+    font-size: 0.85rem;
+    color: var(--gray-700);
   }
 
   .product-hero {

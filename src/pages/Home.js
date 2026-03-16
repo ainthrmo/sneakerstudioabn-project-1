@@ -72,6 +72,7 @@ export default function Home() {
                   />
                 ))}
               </div>
+              <p className="scroll-hint">Swipe to see more →</p>
             </div>
           );
         })}
