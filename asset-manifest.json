@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/sneakerstudio-react/static/css/main.b75312da.css",
-    "main.js": "/sneakerstudio-react/static/js/main.ad4ade0d.js",
-    "index.html": "/sneakerstudio-react/index.html",
-    "main.b75312da.css.map": "/sneakerstudio-react/static/css/main.b75312da.css.map",
-    "main.ad4ade0d.js.map": "/sneakerstudio-react/static/js/main.ad4ade0d.js.map"
+    "main.css": "/sneakerstudioabn-project-1/static/css/main.b75312da.css",
+    "main.js": "/sneakerstudioabn-project-1/static/js/main.ad4ade0d.js",
+    "index.html": "/sneakerstudioabn-project-1/index.html",
+    "main.b75312da.css.map": "/sneakerstudioabn-project-1/static/css/main.b75312da.css.map",
+    "main.ad4ade0d.js.map": "/sneakerstudioabn-project-1/static/js/main.ad4ade0d.js.map"
   },
   "entrypoints": [
     "static/css/main.b75312da.css",
